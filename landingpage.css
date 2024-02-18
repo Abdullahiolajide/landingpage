@@ -1,0 +1,291 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style-type: none;
+    /* box-sizing: border-box; */
+
+}
+
+body{
+    font-family: Inter;
+    
+}
+.dbody{
+    background-image: linear-gradient(rgba(0,0,0,0.40), rgba(0,0,0,0.80)), url("https://ice.io/wp-content/uploads/2022/12/getting-started-2-1.jpg");
+    background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+    background-position: center;
+    width: 100%;
+}
+nav{
+    /* background: white; */
+    /* box-shadow: 0 0 7px rgb(223, 223, 223); */
+    height: 80px;
+    width: 100%;
+    top: 0;
+    position: sticky;
+}
+.logo{
+    color: white;
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-weight: bold;
+}
+nav ul{
+    float: right;
+    margin-right: 20px;
+    animation-name: nav;
+    animation-duration: 2s;
+}
+
+@keyframes  nav{
+    from{
+        margin-right: -400px;
+        opacity: 0;
+    }
+    to{
+        margin-right: 20px;
+        opacity: 1;
+    }
+}
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+    border:2px solid transparent;
+    box-sizing: border-box;
+    
+}
+nav ul li:hover{
+    box-sizing: border-box;
+    transition-duration: 0.5s;
+    border-bottom: 2px solid white;
+}
+/* nav ul li:hover ~a{ */
+    /* color: blue;
+} */
+nav ul li a{
+    color: white;
+    font-size: 17px;
+    text-transform: uppercase;
+    padding: 7px 13px;
+    border-radius: 40px;
+}
+nav i{color: white;}
+.btn:hover .home2{
+    transition-duration: 0.3s;
+}
+/* .home, a:hover{
+    background: #1b9bff;
+    transition-duration: .5s;
+} */
+.checkbtn{
+    font-size: 30px;
+    color: black;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+#check{
+    display: none;
+}
+.front-page{
+    /* background-color: #E1FCFF; */
+    height: calc(100vh - 84px);
+    display: flex;
+    width: 100%;
+}
+#content{
+    /* padding: 50px 100px; */
+    width: 100%;
+    margin: 50px auto;
+    /* white-space: nowrap; */
+    animation-name: content;
+    animation-duration: 2s;
+}
+#content p{
+    color: white;
+}
+@keyframes content {
+    from {opacity: 0;
+        padding: 100px 0px;
+    }
+    to {
+        opacity: 1;
+        padding: 50px auto;
+    }
+  }
+
+#content p{
+    font-size: 17px;
+    padding: 20px 0;
+}
+#content h1{
+    font-size: 60px;
+    color: #fff;
+}
+#content a{
+    color: white;
+}
+#content button{
+    border: 2px solid #0082e6;
+    padding: 15px 30px;
+    color: white;
+    font-size: 14px;
+    border-radius: 50px;
+    background-color: #0082e6;
+}
+#content button:hover a{
+    color: #fff;
+}
+#content button:hover{
+    transition-duration: 0.3s;
+    background-color: transparent;
+    border: 2px solid #fff;
+    cursor: pointer;
+}
+.front-page img{
+    float: right; 
+    margin: 30px 0; 
+    width:70%; 
+    height:110%;
+}
+.offer{
+    height: 70vh;
+    /* background-color: #F3F4F6; */
+    padding: 50px 100px;
+    
+}
+
+.offer h1{
+    font-size: 47px;
+    font-weight: 500;
+}
+.offer p {
+    font-size: 17px;
+    color: grey;
+}
+.offer div div{
+    box-shadow: 0 0 7px rgb(224, 224, 224);
+    width: fit-content;
+    border: 1px solid rgb(187, 187, 187);
+    border-radius: 9px;
+    margin: 20px 10px;
+    
+}
+.flexi{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-gap: 5px;
+}
+.offer div p{
+    text-align: center;
+    background-color: #fff;
+    border-radius: 9px 9px 0 0;
+    width: 100%;
+    padding: 4px 0 0 0;
+}
+.offer h2{
+    font-size: 29px;
+    font-weight: 400;
+    padding: 20px;
+}
+.offer h4{
+    font-weight: 400;
+    padding: 20px 20px;
+}
+.offer img{
+    width: 50px;
+}
+@media (max-width: 1000px){
+    .logo{
+        font-size: 30px;
+        padding-left: 30px;
+    }
+    nav ul li a{
+        font-size: 16px;
+    }
+    #content{
+        width: 85%;
+    }
+}
+@media (max-width: 900px) {
+    .checkbtn{
+        display: block
+    }
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #fff;
+        color: black;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+    nav ul li{
+        display: block;
+    }
+    nav ul li a{
+        font-size: 20px;
+        color: black;
+    }
+    a:hover, .active{
+        background: none;
+        color: #0082e6;
+    }
+    #check:checked ~ ul{
+        left: 0;
+    }
+    .front-page{
+        display: block;
+    }
+    .front-page img{
+       width: 70%;
+       height: 50vh;
+       float: none;
+       display: block;
+       margin: 0 auto;
+    }
+    #content{
+        width: 93%;
+        margin-top: 70px;
+        text-align: center;
+    }
+    #content h1{
+        font-size: 64px;
+    }
+    .offer{
+    height: 70vh;
+    /* background-color: #F3F4F6; */
+    padding: 25px 15px;
+}
+.flexi{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80%, 1fr));
+    grid-gap: 5px;
+}
+    
+   
+}
+@media (max-width: 600px) {
+    #content{
+        width: 93%;
+    }
+    #content h1{
+        font-size: 34px;
+    }
+}
+/* @media (max-width: 1350px) {
+    .front-page img{
+        width: 42%;
+        height: 90%;
+    }
+} */
