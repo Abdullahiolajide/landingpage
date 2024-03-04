@@ -1,0 +1,93 @@
+body{
+    font-family: Inter;
+}
+header{
+    width: 100%;
+    /* background-color: rgb(22, 128, 250); */
+    background-color: rgb(22, 128, 250);
+    padding: 20px;
+    color: white;
+}
+.logo{
+    font-size: 30px; 
+    font-weight: bold; 
+    letter-spacing: 5px;
+}
+.label{
+    padding: 10px 60px;
+    
+}
+.navigation{
+    text-align: center; 
+    width: 10%;
+    /* background-color: rgb(22, 128, 250); */
+    background-color: rgb(22, 128, 250);
+    color: white;
+    padding-top: 8vh;
+    height: 86vh;
+}
+.navigation p{
+    padding: 15px 0;
+}
+.navigation p:hover{
+    background-color: white;
+    color: rgb(22, 128, 250);
+    transition-duration: 0.3s;
+}
+.balance{
+    /* border: 2px solid rgb(22, 128, 250); */
+    height: 27vh;
+    margin-left: 30px;
+    box-shadow: 0 0 7px rgb(204, 204, 204);
+    width: 25%;
+}
+.profile--form{
+    margin: auto;
+    padding: 20px;
+    border: 2px solid rgb(214, 214, 214);
+    border-radius: 5px;
+    width: fit-content;
+    width: 30%;
+}
+.profile--form input, select{
+    border: 1px solid rgb(214, 214, 214);
+    width: 100%;
+    margin: 10px 0;
+    height: 40px;
+    text-indent: 15px;
+    border-radius: 3px;
+    align-self: center;
+}
+option{
+    border: none;
+    padding: 20px 0;
+    background-color: rgb(22, 128, 250);
+    color: white;
+}
+.my--btn{
+    color: white;
+    background-color: rgb(22, 128, 250);
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+}
+.alert-box{
+    margin: 2% 40%; 
+    display: none; 
+    width: 30%; 
+    text-align: center; 
+    opacity: 1; 
+    border: 2px solid lightgray; 
+    padding: 20px; 
+    border-radius: 10px; 
+    position: absolute; 
+    background-color: white;
+}
+.alert-container{
+    position: absolute; 
+    display: none; 
+    width: 100%; 
+    height: 86%; 
+    background-color: lightgrey; 
+    opacity: 0.4; 
+}

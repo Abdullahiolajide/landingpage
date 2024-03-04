@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <link rel="stylesheet" href="fintech.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav style="display: flex; ">
+            <p class="logo">DAVIGE</p>
+            <p class="label">Profile Content</p>
+        </nav>
+    </header>
+
+    <main style="display: flex; width: 100%;">
+        <nav class="navigation">
+            <a href="dsh.html"><p>dashboard</p></a>
+            <a href="profile.html"><p>profile</p></a>
+            <a href="transactions.html"><p>transactions</p></a>
+            <a href="#"><p  style="background-color: white; color: rgb(22, 128, 250);">Transfer</p></a>
+            <a href="deposit.html"><p>Fund Account</p></a>
+            <a href="withdraw.html"><p>Withdraw</p></a>
+            <p><a href="">Logout</a></p>
+        </nav>
+
+            <div class="profile--form">
+                <p>Transfer Money</p>
+               
+               <input type="text" id="account-number" placeholder="Beneficiary Account Number">
+               <input type="text" id="account-name" placeholder="Beneficiary Account Name">
+               <input type="number" id="transfer-amount" placeholder="Amount">
+               <p><button class="my--btn" onclick="customAlert()">Transfer</button></p>
+               <div id="test">ft</div>
+            </div>
+            
+            <div id="alert-container" class="alert-container">
+               
+            </div>
+            <div id="alert-box" class="alert-box">
+                <h1 style="font-size: 19px;">Are you aure you want to transfer
+                     <p style="color: green; font-weight: bold;" id="amount">$</p>
+                      to <p id="aName" style="color: red;"></p>
+                       <p id="aNumber"></p> 
+                </h1>
+                <button  class="my--btn" id="confirm" onclick="success()">Confirm</button>
+                <button class="my--btn" id="cancel-btn" onclick="cancelBtn()">Cancel</button>
+            </div>
+    </main>
+
+    <script>
+        const alertBg = document.getElementById("alert-container");
+        const alertBox = document.getElementById("alert-box");
+        const accountName = document.getElementById("account-name")
+        const accountNumber = document.getElementById("account-number")
+        const transferAmount = document.getElementById("transfer-amount")
+        localStorage.setItem("balance", 500)
+        let num = localStorage.getItem("balance")
+        console.log(num)
+
+        
+        function customAlert(){
+        alertBox.style.display = "block"
+        alertBg.style.display = "block"
+        amount.innerHTML= '$' + transferAmount.value;
+        aName.innerHTML = accountName.value
+        aNumber.innerHTML = accountNumber.value0
+        // localStorage.setItem("balance", num)
+        
+        // console.log(num)
+       
+        
+        }
+
+
+        function success(){
+            console.log(num)
+            localStorage.setItem("balance", num - transferAmount.value) 
+            console.log(localStorage.getItem("balance"))
+            // alertBox.innerHTML = "success"
+        //     setInterval(()=>{
+        //     // location.reload()
+            alertBox.style.display = "none" 
+            alertBg.style.display = "none"
+        // }, 500)
+     
+        }
+        test.innerHTML = localStorage.getItem("balance")
+        function cancelBtn(){
+        alertBox.style.display = "none"
+        alertBg.style.display = "none"
+        }
+    </script>
+
+    
+</body>
+</html>

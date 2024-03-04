@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <link rel="stylesheet" href="fintech.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div>
+        <main className='flex'>
+            <section className='bg-white w-64 h-screen'>
+                <div className='text-2xl pl-8'><b>DAVIGEBANK</b></div>
+                <img className='rounded-full w-40 mx-auto mt-4' src="Images/abd.webp" alt="" />
+                <div className='ml-4'>
+                    <div className='flex text-slate-500 my-4 py-3 pl-4 text-center hover:bg-slate-100 hover:text-black hover:invert-0 hover:invert font-medium'><img  style="filter:invert(30%)"  src="Images/home.svg" alt="Dashboard" className='w-5 mr-2' /> <p>Dashboard</p></div>
+                    <div className='flex text-slate-500 my-4 py-3 pl-4 text-center hover:bg-slate-100 hover:text-black hover:invert-0 hover:invert font-medium' ><img style="filter:invert(30%)"  src="Images/transfer.webp" alt="Dashboard" className='w-5 mr-2' /> <p>Transfer</p></div>
+                    <div className='flex text-slate-500 my-4 py-3 pl-4 text-center hover:bg-slate-100 hover:text-black hover:invert-0 hover:invert font-medium' ><img style="filter:invert(30%)"  src="Images/payments.webp" alt="Dashboard" className='w-5 mr-2' /> <p>Payments</p></div>
+                    <div className='flex text-slate-500 my-4 py-3 pl-4 text-center hover:bg-slate-100 hover:text-black hover:invert-0 hover:invert font-medium'><img style="filter:invert(30%)"  src="Images/profile.webp" alt="Dashboard" className='w-5 mr-2' /> <p>Profile</p></div>
+                </div>
+            </section>
+            <section className='w-full bg-slate-100'></section>
+        </main>
+    </div> -->
+    <!-- dashboard
+        profile
+        transactions
+        Transfer
+        Fund Account
+        Withdraw
+        Logout -->
+        <style>
+            .container{
+                border: 1px solid rgb(211, 209, 209);
+                padding: 20px;
+                margin: auto;
+                margin: 30px;
+                width: 230%;
+            }
+            .transaction--nav{
+                display: flex;
+                width: 100%;
+               
+            }
+            .transaction--nav p{
+                /* background-color: rgb(22, 128, 250); */
+                border: 1px solid rgb(211, 209, 209);
+                border-left: none; border-right: none;
+                padding: 10px 0;
+                margin: 0;
+                text-align: center;
+                width: 100%;
+            }
+            .transaction--nav p:hover{
+                background-color: rgb(22, 128, 250);
+                color: white;
+                transition-duration: 0.3s;
+                cursor: pointer;
+            }
+            table, th, td{
+                border: 1px solid rgb(211, 209, 209);
+                text-align: center;
+                padding: 7px 0;
+            }
+        </style>
+
+        <header>
+            <nav style="display: flex; ">
+                <p class="logo">DAVIGE BANK</p>
+                <p class="label">Transaction History</p>
+            </nav>
+        </header>
+
+        <main style="display: flex; width: 100%;">
+            <nav class="navigation">
+                <a href="dsh.html"><p>dashboard</p></a>
+                <a href="profile.html"><p>profile</p></a>
+                <p  style="background-color: white; color: rgb(22, 128, 250);"><a href="#">Transactions</a></p>
+                <a href="transfer.html"><p>Transfer</p></a>
+                <a href="deposit.html"><p>Fund Account</p></a>
+                <a href="withdraw.html"><p>Withdraw</p></a>
+                <p><a href="">Logout</a></p>
+            </nav>
+
+                <div>
+                        <main class="container">
+                            <nav class="transaction--nav">
+                                <p style="background-color: rgb(22, 128, 250); color: white;">Transfers</p>
+                                <p>Deposit Transactions</p>
+                                <p>Withdraw Transactions</p>
+                            </nav>
+                            <div style="margin: 20px;">Unknown Transcation</div>
+                            <table style="width: 100%; margin-top: 15px;">
+                                <tr>
+                                    <th>S/N</th>
+                                    <th>Name</th>
+                                    <th>Amount</th>
+                                    <th>Time</th>   
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Abdullahi</td>
+                                    <td>1000</td>
+                                    <td>12:17:09</td>
+                                </tr>
+                            </table>
+                        </main>
+                </div>
+        </main>
+
+</body>
+</html>

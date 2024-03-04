@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <link rel="stylesheet" href="fintech.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav style="display: flex; ">
+            <p class="logo">DAVIGE</p>
+            <p class="label">Profile Content</p>
+        </nav>
+    </header>
+
+    <main style="display: flex; width: 100%;">
+        <nav class="navigation">
+            <a href="dsh.html"><p>dashboard</p></a>
+            <a href="#"><p style="background-color: white; color: rgb(22, 128, 250);">profile</p></a>
+            <a href="transactions.html"><p>transactions</p></a>
+            <a href="transfer.html"><p>Transfer</p></a>
+            <a href="deposit.html"><p>Fund Account</p></a>
+            <a href="withdraw.html"><p>Withdraw</p></a>
+            <p><a href="">Logout</a></p>
+        </nav>
+
+            <div class="profile--form">
+                <p>Edit Profile</p>
+               <input type="text" placeholder="Firstname">
+               <input type="text" placeholder="Lastname">
+               <input type="text" placeholder="E-mail">
+               <input type="text" placeholder="Phone">
+               <select name="" id="">
+                    <option value="">Male</option>
+                    <option value="">Female</option>
+                    <option value="">Other</option>
+               </select>
+               <input type="text" placeholder="Gender">
+               <p><button class="my--btn" onclick="customAlert()">Update Profile</button></p>
+            </div>
+            <div id="alert-container" class="alert-container"></div>
+            <div id="alert-box" class="alert-box">
+                <h1>You are changing your profile</h1>
+                <button class="my--btn" onclick="success()">Confirm</button>
+                <button class="my--btn" onclick="cancelBtn()">Cancel</button>
+            </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
