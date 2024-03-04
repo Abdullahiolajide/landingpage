@@ -15,7 +15,7 @@
     <nav>
         <input type="checkbox" id="check">
         <label for="check" class="checkbtn">
-            <i class="fas fa-bars"></i>
+            <i class="fas fa-bars"></i> 
         </label>
         <label for="" class="logo">DAVIGE</label>
         <ul>
@@ -23,8 +23,8 @@
             <li class="btn"><a class="home2" href="">services</a></li>
             <li class="btn"><a class="home2" href="">About</a></li>
             <li class="btn"><a class="home2" href="">contact</a></li>
-            <li class="btn" id="signin"><a class="home2" href="">Sign Up</a></li>
-            <li class="btn" id="signup"><a class="home2" href="index.html">Sign in </a></li>
+            <li class="btn" id="signin"><a class="home2" href="signup.html">Sign Up</a></li>
+            <li class="btn" id="signup"><a class="home2" href="signin.html">Sign in </a></li>
         </ul>
     </nav>
     <center>
@@ -42,7 +42,7 @@
 </div>
 
 
-    <section class="offer">
+    <!-- <section class="offer">
         <h1>What we offer</h1>
         <p>We leverage Open Banking to turn your bank account into your financial hub. Control your finances like never before.</p>
         <div class="flexi">
@@ -70,8 +70,66 @@
                 <h4>Manage your savings, investments, pension, and much more from one account. Tracking your money has never been easier.</h4>
             </div>
         </div>
-    </section>
+    </section> -->
+       
+    <style>
+        .section1{
+            text-align: center;
+            margin: 20px 15%;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 22px;
 
-    
+        }
+        .section1 img{
+            width: 100%;
+        }
+        .section1 p{
+          font-size: 17px;
+          padding-top: 10px;
+        }
+        .help div{
+            text-align: center;
+            padding-top: 30px;
+        }
+
+        .help h1{
+            font-weight: lighter;
+            font-size: 37px;
+            color: #464D57;
+            word-spacing: 3px;
+            letter-spacing: 2px;
+            width: 50%;
+            text-align: center;
+            margin: auto;
+            padding-top: 25px;
+        }
+        .help{
+            height: 100vh;
+            background-color: #FAF9F9;
+            display: block;
+        }
+    </style>
+      <section class="help">
+        <h1>We’re here to help you spend and save smarter.</h1>
+        <main class="section1" >
+            
+            <div>
+                <img src="https://www.alliantcreditunion.org/images/made/images/uploads/images/Using-AI-to-manage-money_270_175.jpg" alt="">
+                <p>Should I use AI to help manage my money?</p>
+            </div>
+            <div>
+                <img src="https://www.alliantcreditunion.org/images/made/images/uploads/images/switching_financial_institutions_270_175.jpg" alt="">
+                <p>How to break up with your bank: Steps on how to switch from one financial institution to another</p>
+            </div>
+            <div>
+                <img src="https://www.alliantcreditunion.org/images/made/images/uploads/images/valentines-day-spending-statistics-money-mentor_270_175.jpg" alt="">
+                <p>Valentine’s Day statistics: How much do Americans spend?</p>
+            </div>
+        </main> 
+        <div><a href="">view more Articles</a></div>
+      </section>
+      
+     
 </body>
 </html>
