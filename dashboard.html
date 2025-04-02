@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="welcome">This is your dashboard</h1>
+    <div id="pic"></div>
+    <input id="chatName" placeholder="chatName" type="text">
+    <input id="chatDescription" placeholder="chatDescription" type="text">
+    <input type="file" id="media"> <br>
+    <input type="button" value="send chat" onclick="sendChat()"><br>
+    <button onclick="signUOut()">sign out</button>
+
+    <div id="chat1"></div>
+    <div id="chat2"></div>
+
+    <div>
+      <main className='flex'>
+          <section className='bg-white w-64 h-screen'>
+              <div className='text-2xl pl-8'><b>DAVIGEBANK</b></div>
+              <img className='rounded-full w-40 mx-auto mt-4' src="" alt="" />
+              <div className='ml-4'>
+                  <div className='flex text-slate-500 my-4 py-3 pl-4 text-center hover:bg-slate-100 hover:text-black hover:invert-0 hover:invert font-medium'><img  style="filter:invert(30%)"  src="" alt="Dashboard" className='w-5 mr-2' /> <p>Dashboard</p></div>
+                  <div className='flex text-slate-500 my-4 py-3 pl-4 text-center hover:bg-slate-100 hover:text-black hover:invert-0 hover:invert font-medium' ><img style="filter:invert(30%)"  src="" alt="Dashboard" className='w-5 mr-2' /> <p>Transfer</p></div>
+                  <div className='flex text-slate-500 my-4 py-3 pl-4 text-center hover:bg-slate-100 hover:text-black hover:invert-0 hover:invert font-medium' ><img style="filter:invert(30%)"  src="" alt="Dashboard" className='w-5 mr-2' /> <p>Payments</p></div>
+                  <div className='flex text-slate-500 my-4 py-3 pl-4 text-center hover:bg-slate-100 hover:text-black hover:invert-0 hover:invert font-medium'><img style="filter:invert(30%)"  src="" alt="Dashboard" className='w-5 mr-2' /> <p>Profile</p></div>
+              </div>
+          </section>
+          <section className='w-full bg-slate-100'></section>
+      </main>
+  </div>
+
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
+      import { getAuth,  onAuthStateChanged, signOut,} from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
+      import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js";
+      import { getStorage, ref as storageRef, uploadBytesResumable } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-storage.js";
+      
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyCW_cFe5nbhuNNEzMVWPv2CVtpPWi-Plps",
+        authDomain: "fir-prac-aaca5.firebaseapp.com",
+        projectId: "fir-prac-aaca5",
+        storageBucket: "fir-prac-aaca5.appspot.com",
+        messagingSenderId: "790057270870",
+        appId: "1:790057270870:web:f2fe192837916c267305f7",
+        databaseURL: "https://fir-prac-aaca5-default-rtdb.firebaseio.com"
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+      const database = getDatabase(app)
+      const storage = getStorage(app)
+      let index = 0
+
+      onAuthStateChanged(auth, (user) => {
+        if (user) {
+            console.log("welcome baba")
+            console.log(auth)
+            welcome.innerHTML += ` ${auth.currentUser.displayName}`
+            pic.innerHTML = `<img src="${auth.currentUser.photoURL}">`
+            
+        }else{
+            window.location.href = "index.html"
+           
+        }
+      })
+
+      
+      const signUOut =()=>{
+        signOut(auth)
+        .then(() => {
+        console.log("sign our successsful")
+        }).catch((error) => {
+        // An error happened.
+        console.log(error)
+        });
+      }
+
+      window.signUOut = signUOut
+
+      const sendChat=()=>{
+        let date = new Date()
+        let mediaName = media.files[0].name;
+        let mediaObj = media.files[0]
+        console.log(media.files[0])
+        let chatObj = {
+          chat :chatName.value,
+          desc :chatDescription.value,
+          time : date.toLocaleTimeString(),
+          user : auth.currentUser.displayName,
+          mediaName : media.files[0].name
+        }
+        
+          // saving to database
+          let chatRef = ref(database, `chat/${index}`)
+          set(chatRef, chatObj);
+          
+          // storing into storage
+
+          let stRef = storageRef(storage, mediaName)
+          uploadBytesResumable(stRef, mediaObj)
+
+        let newRef = ref(database, "chat")
+        onValue(newRef, (snapshot)=>{
+          const data = snapshot.val()
+          console.log(data.length)
+          if (data) {
+            index = data.length;
+            chat1.innerHTML = ""
+            data.map((restores, inde)=>{
+            chat1.innerHTML += `
+            <h1>${inde}${restores.chat}</h1>
+            <h2>${restores.desc}</h2>
+            <h3>${restores.time}</h3>
+            <h4>${restores.user}</h4>
+            `
+          })
+          }else{
+            index = 0
+            chat1.innerHTML = "No message Yet"
+          }
+          
+
+          
+          // chat1.innerHTML = data[0].chat;
+        })
+
+        // chat1.innerHTML = data[0].chat;
+        // chat2.innerHTML = data[1].chat;
+        
+        // console.log(data[1].chat)
+        console.log(auth)
+        console.log(chatObj)
+      }
+      window.sendChat = sendChat;
+
+
+      
+
+    </script>
+</body>
+</html>
